@@ -1,5 +1,6 @@
 package com.heerou.pokedexapi;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.heerou.pokedexapi.models.Pokemons;
 
 import java.util.ArrayList;
@@ -15,9 +17,11 @@ import java.util.ArrayList;
 public class PokemonListAdapter extends RecyclerView.Adapter<PokemonListAdapter.ViewHolder>
 {
     private ArrayList<Pokemons> dataSet;
+    private Context context;
 
-    public PokemonListAdapter()
+    public PokemonListAdapter(Context context)
     {
+        this.context = context;
         dataSet =  new ArrayList<>();
     }
 
@@ -36,6 +40,8 @@ public class PokemonListAdapter extends RecyclerView.Adapter<PokemonListAdapter.
     {
         Pokemons p = dataSet.get(pos);
         viewHolder.nombreTextView.setText(p.getName());
+
+        Glide.with(context).load("");
     }
 
     @Override

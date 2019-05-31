@@ -11,6 +11,7 @@
         android:layout_gravity="center_horizontal"
         android:background="@color/colorAccent"/>
 
+
     <TextView
         android:id="@+id/nombreTextView"
         android:layout_width="match_parent"
